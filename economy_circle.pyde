@@ -5,10 +5,13 @@ img = None
 
 def setup():
     global img1, img2
+    global font
     size(1000,1000)
     #Bilder aus Data laden
     img1 = loadImage("industrie2.png")
     img2 = loadImage("house.png")
+    font = createFont("Century Gothic",50)
+    textFont(font)
     
   
         
@@ -24,14 +27,15 @@ def draw():
     #Titel Wirtschaftskreislauf
     xPos = 40
     yPos = 70
-    textSize(64)
+    textSize(60)
     fill(0,0,0)
     text("Wirtschaftskreislauf", xPos,yPos)
+    textAlign(LEFT)
+    
     
     #Legende Wirtschaftskreislauf
     yPos = 700
     textSize(30)
-    
     fill(255,250,8)
     text("Gueterstrom", xPos,yPos)
        
