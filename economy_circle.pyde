@@ -1,32 +1,51 @@
+ #mehrere Pfeile werden aus dem Zusatz geladen
+from mehrere_pfeile import arrow
+
 img = None
 
 def setup():
     global img1, img2
     size(1000,1000)
     #Bilder aus Data laden
-    img1 = loadImage("industrie.png")
+    img1 = loadImage("industrie2.png")
     img2 = loadImage("house.png")
+    
+  
         
-    
 def draw():
-    background(0, 153, 204)
+    background(155, 155, 155)
     #Position der Bilder setzen
-    image(img1, 50,300)
-    image(img2, 650, 250)
-    drawArrow(420,420,420,420)
-
-# Pfeilform
-def drawArrow(x, y, length, width):
-    beginShape()
-    vertex(180,82)
-    vertex(207,36)
-    vertex(214,63)
-    vertex(407,11)
-    vertex(412,30)
-    vertex(219,82)
-    vertex(226,109)
-    endShape(CLOSE)
-    #Farbe Pfeil
-    fill(238,157,13)
+    image(img1, 50,300,240,220)
+    image(img2, 650, 320,240,220)
     
+    arrow(180,150)
+  
+    
+    #Titel Wirtschaftskreislauf
+    xPos = 40
+    yPos = 70
+    textSize(64)
+    fill(0,0,0)
+    text("Wirtschaftskreislauf", xPos,yPos)
+    
+    #Legende Wirtschaftskreislauf
+    yPos = 700
+    textSize(30)
+    
+    fill(255,250,8)
+    text("Gueterstrom", xPos,yPos)
+       
+    fill(0,255,10)
+    text("Geldstrom", xPos+240,yPos)    
+    
+    fill(0,102,204)
+    text("Produzenten", xPos+480,yPos)    
+    
+    fill(255,0,0)
+    text("Konsumenten", xPos+740,yPos)
+      
+    
+
+
+
     
