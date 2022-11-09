@@ -28,7 +28,7 @@ def draw():
     xPos = 40
     yPos = 70
     textSize(60)
-    fill(0,0,0)
+    fill(0,26,100)
     text("Wirtschaftskreislauf", xPos,yPos)
     textAlign(LEFT)
     
