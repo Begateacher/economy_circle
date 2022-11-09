@@ -38,9 +38,10 @@ def draw():
     textSize(30)
     fill(255,250,8)
     text("Gueterstrom", xPos,yPos)
-       
+    textAlign(LEFT)
+
     fill(0,255,10)
-    text("Geldstrom", xPos+240,yPos)    
+    text("Geldstrom", xPos+250,yPos)    
     
     fill(0,102,204)
     text("Produzenten", xPos+480,yPos)    
