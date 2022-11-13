@@ -13,11 +13,10 @@ def setup():
     font = createFont("Century Gothic",50)
     textFont(font)
     
-  
         
 def draw():
     background(155, 155, 155)
-    #Position der Bilder setzen
+    #Position der Bilder und Grösse der Bilder 
     image(img1, 50,300,240,220)
     image(img2, 650, 320,240,220)
     
@@ -48,6 +47,10 @@ def draw():
     
     fill(255,0,0)
     text("Konsumenten", xPos+740,yPos)
+    
+    fill(0,0,0)
+    text("klicke auf einen der Begriffe!",xPos+20,yPos+100)
+
       
     
 
