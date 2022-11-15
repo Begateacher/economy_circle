@@ -1,17 +1,19 @@
-#Pfeil zeichnen
-def arrow(xPos, yPos): 
-    
+#benötigte Formen zeichnen
+
+#zeichnet Pfeile von links nach rechts
+def arrow_right(xPos, yPos): 
     noStroke()
-    fill(0,50,150)
-    
-    #zeichnet pfeile von links nach rechts
-    rect(xPos-100,yPos,700,20);
-    triangle(xPos+600,125, yPos+700,164, xPos+600,200) 
-    
-    fill(0,0,0)
-    #zeichnet Pfeile von rechts nach links
-    rect(0+167,600,700,20);
-    triangle(0+167,575, -70+167, 610, 0+167,640) 
-    
-  
+    rect(xPos,yPos,780,20);
+    triangle(xPos+780, yPos-20, xPos+780,yPos+40, xPos+830,yPos+10) 
+
+#zeichnet Pfeile von rechts nach links
+def arrow_left(xPos, yPos):
+    noStroke()
+    rect(xPos,yPos,780,20);
+    triangle(xPos, yPos-20, xPos, yPos+40, xPos-50,yPos+10) 
+
+#Rahmen für die beiden Bilder
+def rahmen(xPos, yPos):
+    noFill()
+    rect(xPos, yPos, 260, 260)
     
