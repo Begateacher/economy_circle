@@ -1,3 +1,7 @@
+
+img = None
+
+
 #zeichnet Pfeile von links nach rechts
 def arrow_right(xPos, yPos): 
     noStroke()
@@ -15,7 +19,7 @@ def rahmen(xPos, yPos):
     noFill()
     rect(xPos, yPos, 260, 260)
     
-img = None
+txt = ""
 
 def setup():
     global img1, img2
@@ -27,7 +31,7 @@ def setup():
     font = createFont("Century Gothic",50)
     textFont(font)
     
-        
+    
 def draw():
     background(155, 155, 155)
     
@@ -46,8 +50,22 @@ def draw():
     textSize(30)
     textAlign(LEFT) 
     
+     # Maustaste drücken, Definitionstext erscheint        
+    if mousePressed:
+        
+       
+        fill(255,250,8)
+        textSize(20)
+              
+        u = 700
+        lines = loadStrings("gueter.txt")
+
+        for line in lines:
+            text(line, xPos, u+20, 1000,1000)
+            u += 700*10
+    
     fill(255,250,8)
-    text("Gueterstrom", xPos, yPos)
+    text(u"Güterstrom", xPos, yPos)
     
     fill(0,255,10)
     text("Geldstrom", xPos+250,yPos)    
@@ -59,7 +77,8 @@ def draw():
     text("Konsumenten", xPos+740,yPos)
     
     fill(0,0,0)
-    text("klicke auf einen der Begriffe!",xPos+20,yPos+100)
+    textSize(20)
+    text("Klicke auf einen der Begriffe!",xPos,yPos-40)
         
     
     #Position der Bilder und Grösse der Bilder 
@@ -68,6 +87,7 @@ def draw():
     
     #Rahmen für die Bilder
     stroke(0,102,204)
+    strokeWeight(3)
     rahmen(50,230)
     
     stroke(255,0,0)
