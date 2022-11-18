@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 img = None
 
 #Pfeil von links nach rechts
@@ -21,6 +22,8 @@ def rahmen(xPos, yPos):
 #leere Liste für Text    
 txt = ""
 
+=======
+>>>>>>> Stashed changes
 def setup():
     global img1, img2
     global font
