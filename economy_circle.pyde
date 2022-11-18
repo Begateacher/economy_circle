@@ -1,5 +1,5 @@
 
-<<<<<<< Updated upstream
+
 img = None
 
 #Pfeil von links nach rechts
@@ -22,8 +22,6 @@ def rahmen(xPos, yPos):
 #leere Liste für Text    
 txt = ""
 
-=======
->>>>>>> Stashed changes
 def setup():
     global img1, img2
     global font
@@ -109,7 +107,7 @@ def draw():
         textSize(20)
               
         u = 700
-        lines = loadStrings("gueter.txt")
+        lines = loadStrings("geldstrom.txt")
 
         for line in lines:
             text(line, xPos, u+20, 1000,1000)
@@ -127,7 +125,7 @@ def draw():
         textSize(20)
               
         u = 700
-        lines = loadStrings("gueter.txt")
+        lines = loadStrings("produzenten.txt")
 
         for line in lines:
             text(line, xPos, u+20, 1000,1000)
@@ -145,7 +143,7 @@ def draw():
         textSize(20)
               
         u = 700
-        lines = loadStrings("gueter.txt")
+        lines = loadStrings("konsumenten.txt")
 
         for line in lines:
             text(line, xPos, u+20, 1000,1000)
