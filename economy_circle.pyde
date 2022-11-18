@@ -1,6 +1,10 @@
-
-
+#globale Vereinbarungen 
 img = None
+
+#Variable font erspart mit global
+font = None
+tt ="Der Wirtschaftkreislauf"
+lines = ""
 
 #Pfeil von links nach rechts
 def arrow_right(xPos, yPos): 
@@ -19,12 +23,8 @@ def rahmen(xPos, yPos):
     noFill()
     rect(xPos, yPos, 260, 260)
 
-#leere Liste für Text    
-txt = ""
-
 def setup():
     global img1, img2
-    global font
     size(1000,1000)
     #Bilder aus Data laden
     img1 = loadImage("industrie2.png")
@@ -42,7 +42,7 @@ def draw():
     textSize(60)
     fill(0,26,100)
     textAlign(CENTER)
-    text("Wirtschaftskreislauf", xPos,yPos)
+    text(tt, xPos,yPos)
 
 
     #Legende Wirtschaftskreislauf
@@ -91,7 +91,7 @@ def draw():
         lines = loadStrings("gueter.txt")
 
         for line in lines:
-            text(line, xPos, u+20, 1000,1000)
+            text(line, xPos, u+20, 950,950)
             u += 700*10
     
     # Maustaste drücken, Pfeile und Definitionstext Geldstrom erscheinen 
@@ -110,7 +110,7 @@ def draw():
         lines = loadStrings("geldstrom.txt")
 
         for line in lines:
-            text(line, xPos, u+20, 1000,1000)
+            text(line, xPos, u+20, 950,950)
             u += 700*10
             
     # Maustaste drücken, Rahmen und Definitionstext Produzent erscheinen
@@ -128,7 +128,7 @@ def draw():
         lines = loadStrings("produzenten.txt")
 
         for line in lines:
-            text(line, xPos, u+20, 1000,1000)
+            text(line, xPos, u+20, 950,950)
             u += 700*10
     
     # Maustaste drücken, Definitionstext Konsument erscheint 
@@ -146,5 +146,5 @@ def draw():
         lines = loadStrings("konsumenten.txt")
 
         for line in lines:
-            text(line, xPos, u+20, 1000,1000)
+            text(line, xPos, u+20, 950,950)
             u += 700*10

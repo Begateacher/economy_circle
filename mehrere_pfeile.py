@@ -1,4 +1,4 @@
-#benötigte Formen zeichnen
+#benoetigte Formen zeichnen
 
 #zeichnet Pfeile von links nach rechts
 def arrow_right(xPos, yPos): 
