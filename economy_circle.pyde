@@ -1,8 +1,8 @@
 #globale Vereinbarungen 
 img = None
-
-#Variable font erspart mit global
+#Variable ohne Zuweisung
 font = None
+#Vaiable mit Zuweisung
 tt ="Der Wirtschaftkreislauf"
 lines = ""
 
@@ -36,7 +36,7 @@ def setup():
 def draw():
     background(155, 155, 155)
     
-    #Titel Wirtschaftskreislauf
+    #tt Variable, Titel Wirtschaftskreislauf wird geladen und gesetzt
     xPos = 500
     yPos = 70
     textSize(60)
@@ -94,7 +94,7 @@ def draw():
             text(line, xPos, u+20, 950,950)
             u += 700*10
     
-    # Maustaste drücken, Pfeile und Definitionstext Geldstrom erscheinen 
+    # Maustaste drücken, Pfeile und Definitionstext Geldstrom erscheinen
     if mousePressed and mouseX > 290 and mouseX < 445 and mouseY > 675 and mouseY < 700:
         #Farbe
         fill(0, 255, 10)
