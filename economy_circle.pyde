@@ -34,7 +34,7 @@ def setup():
     
     
 def draw():
-    background(155, 155, 155)
+    background(150, 155, 155)
     
     #tt Variable, Titel Wirtschaftskreislauf wird geladen und gesetzt
     xPos = 500
@@ -112,6 +112,7 @@ def draw():
         for line in lines:
             text(line, xPos, u+20, 950,950)
             u += 700*10
+            
             
     # Maustaste drücken, Rahmen und Definitionstext Produzent erscheinen
     if mousePressed and mouseX > 520 and mouseX < 705 and mouseY > 675 and mouseY < 700:
