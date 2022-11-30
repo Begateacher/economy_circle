@@ -12,7 +12,7 @@ def arrow_left(xPos, yPos):
     rect(xPos,yPos,780,20)
     triangle(xPos, yPos-20, xPos, yPos+40, xPos-50,yPos+10) 
 
-#Rahmen für die beiden Bilder
+#Rahmen fuer die beiden Bilder
 def rahmen(xPos, yPos):
     noFill()
     rect(xPos, yPos, 260, 260)
