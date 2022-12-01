@@ -1,3 +1,4 @@
+# importieren der pfeile
 from mehrere_pfeile import *
 
 #globale Vereinbarungen 
@@ -6,6 +7,7 @@ img = None
 font = None
 #Vaiable mit Zuweisung
 tt ="Der Wirtschaftkreislauf"
+# Variable zu den Texten
 lines = ""
 #Variable zur Klickfunktion
 value = 0
@@ -20,7 +22,7 @@ def setup():
     font = createFont("Century Gothic",50)
     textFont(font)
     
-    
+# --------------------    
 def draw():
     background(150, 155, 155)
     
@@ -62,7 +64,7 @@ def draw():
     
     #Interaktionsmöglichkeiten
     
-    #Maustaste drücken, Pfeile und Definitionstext Güterstrom erscheinen    
+    #Maustaste drücken, Pfeile und Definitionstext Güterstrom erscheinen  
     if value == 1:
         #Farbe
         fill(255, 250, 8)
@@ -71,7 +73,7 @@ def draw():
         arrow_right(90, 540)    
         arrow_left(140, 170)  
         
-        #Definitionstext
+        #Definitionstextgrösse, Textposition, Text laden
         textSize(20)
               
         u = 700
@@ -79,8 +81,8 @@ def draw():
 
         for line in lines:
             text(line, xPos, u+20, 950,950)
-            u += 700*10 
-            
+            u += 700*10
+    
     #Maustaste drücken, Pfeile und Definitionstext Geldstrom erscheinen
     if value == 2:
         #Farbe
@@ -99,8 +101,7 @@ def draw():
         for line in lines:
             text(line, xPos, u+20, 950,950)
             u += 700*10
-            
-            
+                    
     # Maustaste drücken, Rahmen und Definitionstext Produzent erscheinen
     if value == 3:
         #Rahmen
@@ -142,7 +143,7 @@ def mouseClicked():
     global value
     if value == 0 and mouseX > 40 and mouseX < 200 and mouseY > 675 and mouseY < 700:
         value = 1
-    
+
     elif value == 0 and mouseX > 290 and mouseX < 445 and mouseY > 675 and mouseY < 700:
         value = 2
          
@@ -154,5 +155,9 @@ def mouseClicked():
         
     else:
         value = 0
-    
+
+        
+
+
+
     
