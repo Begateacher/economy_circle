@@ -1,5 +1,5 @@
 #benoetigte Formen zeichnen
-
+value = 0
 #zeichnet Pfeile von links nach rechts
 def arrow_right(xPos, yPos): 
     noStroke()
@@ -16,5 +16,3 @@ def arrow_left(xPos, yPos):
 def rahmen(xPos, yPos):
     noFill()
     rect(xPos, yPos, 260, 260)
-    
-    

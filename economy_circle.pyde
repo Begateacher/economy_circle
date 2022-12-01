@@ -7,6 +7,8 @@ font = None
 #Vaiable mit Zuweisung
 tt ="Der Wirtschaftkreislauf"
 lines = ""
+#Variable zur Klickfunktion
+value = 0
 
 
 def setup():
@@ -56,13 +58,12 @@ def draw():
     #Position der Bilder und Grösse der Bilder 
     image(img1, 60, 250, 240, 220)
     image(img2, 700, 270, 240, 220)   
-    
-    # --------------------
+# --------------------
     
     #Interaktionsmöglichkeiten
     
-    # Maustaste drücken, Pfeile und Definitionstext Güterstrom erscheinen       
-    if mousePressed and mouseX > 40 and mouseX < 200 and mouseY > 675 and mouseY < 700: 
+    #Maustaste drücken, Pfeile und Definitionstext Güterstrom erscheinen    
+    if value == 1:
         #Farbe
         fill(255, 250, 8)
         
@@ -78,10 +79,10 @@ def draw():
 
         for line in lines:
             text(line, xPos, u+20, 950,950)
-            u += 700*10
-    
-    # Maustaste drücken, Pfeile und Definitionstext Geldstrom erscheinen
-    if mousePressed and mouseX > 290 and mouseX < 445 and mouseY > 675 and mouseY < 700:
+            u += 700*10 
+            
+    #Maustaste drücken, Pfeile und Definitionstext Geldstrom erscheinen
+    if value == 2:
         #Farbe
         fill(0, 255, 10)
         
@@ -101,7 +102,7 @@ def draw():
             
             
     # Maustaste drücken, Rahmen und Definitionstext Produzent erscheinen
-    if mousePressed and mouseX > 520 and mouseX < 705 and mouseY > 675 and mouseY < 700:
+    if value == 3:
         #Rahmen
         stroke(0,102,204)
         strokeWeight(3)
@@ -119,7 +120,7 @@ def draw():
             u += 700*10
     
     # Maustaste drücken, Definitionstext Konsument erscheint 
-    if mousePressed and mouseX > 780 and mouseX < 980 and mouseY > 675 and mouseY < 700:
+    if value == 4:
         #Rahmen
         stroke(255,0,0)
         strokeWeight(3)
@@ -135,3 +136,23 @@ def draw():
         for line in lines:
             text(line, xPos, u+20, 950,950)
             u += 700*10
+    
+#Klickfunktion
+def mouseClicked():
+    global value
+    if value == 0 and mouseX > 40 and mouseX < 200 and mouseY > 675 and mouseY < 700:
+        value = 1
+    
+    elif value == 0 and mouseX > 290 and mouseX < 445 and mouseY > 675 and mouseY < 700:
+        value = 2
+         
+    elif value == 0 and mouseX > 520 and mouseX < 705 and mouseY > 675 and mouseY < 700:
+        value = 3
+        
+    elif value == 0 and mouseX > 780 and mouseX < 980 and mouseY > 675 and mouseY < 700:
+        value = 4
+        
+    else:
+        value = 0
+    
+    
