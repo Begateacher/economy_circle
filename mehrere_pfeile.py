@@ -1,5 +1,5 @@
 #benoetigte Formen zeichnen
-value = 0
+
 #zeichnet Pfeile von links nach rechts
 def arrow_right(xPos, yPos): 
     noStroke()
