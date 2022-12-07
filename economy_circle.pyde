@@ -142,16 +142,16 @@ def draw():
 #Klickfunktion
 def mouseClicked():
     global value
-    if value != 1 and mouseX > 40 and mouseX < 200 and mouseY > 675 and mouseY < 700:
+    if value == 0 and mouseX > 40 and mouseX < 200 and mouseY > 675 and mouseY < 700:
         value = 1
 
-    elif value != 2 and mouseX > 290 and mouseX < 445 and mouseY > 675 and mouseY < 700:
+    elif value == 0 and mouseX > 290 and mouseX < 445 and mouseY > 675 and mouseY < 700:
         value = 2
          
-    elif value!= 3 and mouseX > 520 and mouseX < 705 and mouseY > 675 and mouseY < 700:
+    elif value == 0 and mouseX > 520 and mouseX < 705 and mouseY > 675 and mouseY < 700:
         value = 3
         
-    elif value!= 4 and mouseX > 780 and mouseX < 980 and mouseY > 675 and mouseY < 700:
+    elif value == 0 and mouseX > 780 and mouseX < 980 and mouseY > 675 and mouseY < 700:
         value = 4
     
     else:
