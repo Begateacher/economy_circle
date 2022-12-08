@@ -1,13 +1,13 @@
-# importieren der pfeile
+#importieren der Pfeile und Rahmen
 from mehrere_pfeile import *
 
 #globale Vereinbarungen 
-img = None
+img = None   #brauchen wir diese Zeile? im setup haben wir dann ja img1 und img2?
 #Variable ohne Zuweisung
 font = None
 #Vaiable mit Zuweisung
 tt ="Der Wirtschaftkreislauf"
-# Variable zu den Texten
+#Variable zu den Texten
 lines = ""
 #Variable zur Klickfunktion
 value = 0
@@ -15,7 +15,7 @@ value = 0
 def setup():
     global img1, img2
     size(1000,1000)
-    #Bilder aus Data laden
+    #Bilder aus data laden
     img1 = loadImage("industrie2.png")
     img2 = loadImage("house.png")
     font = createFont("Century Gothic",50)
@@ -24,6 +24,7 @@ def setup():
 def draw():
     background(155, 150, 150)
     
+    # --- Titel
     #tt Variable, Titel Wirtschaftskreislauf wird geladen und gesetzt
     xPos = 500
     yPos = 70
@@ -32,11 +33,23 @@ def draw():
     textAlign(CENTER)
     text(tt, xPos,yPos)
     
+    # --- Anweisung zum Nutzen des Programms
+    fill(0,0,0)
+    textSize(20)
+    text("Klicke auf einen der Begriffe!",xPos,yPos+40)
+    
+    # --- Bilder des Wirtschaftskreislaufs
+    # Position der Bilder und Grösse der Bilder 
+    image(img1, 60, 250, 240, 220)
+    image(img2, 700, 270, 240, 220)  
+    
+    # --- Legende 
+    # gesamter Wirtschaftskreislauf
     fill(0,26,100)
     textSize(25)
     text("Gesamter Wirtschaftskreislauf", xPos, yPos+ 330)
     
-     #Legende Wirtschaftskreislauf
+    # einzelne Begriffe zum Wirtschaftskreislauf
     xPos = 40
     yPos = 700
     textSize(30)
@@ -54,47 +67,41 @@ def draw():
     fill(255,0,0)
     text("Konsumenten", xPos+740,yPos)
     
-    fill(0,0,0)
-    textSize(20)
-    text("Klicke auf einen der Begriffe!",xPos+50,yPos-590)
- 
-    #Position der Bilder und Grösse der Bilder 
-    image(img1, 60, 250, 240, 220)
-    image(img2, 700, 270, 240, 220)   
+     
 # --------------------
     
-    #Interaktionsmöglichkeiten
+    # --- Interaktionsmöglichkeiten
     
-    #Maustaste drücken, Pfeile und Definitionstext Güterstrom erscheinen und bleiben bis zum nächsten Klick
+    #Mausklick auf den Begriff Güterstrom: Pfeile und Definitionstext erscheinen und bleiben bis zum nächsten Klick
     if value == 1:
-        #Farbe
+        #Farbe für Pfeile und Text
         fill(255, 250, 8)
         
         #Pfeile
         arrow_right(90, 540)    
         arrow_left(140, 170)  
         
-        #Definitionstextgrösse, Textposition, Text laden
-        textSize(20)
+        #Definitionstext: Grösse, Textposition, Text in einem definierten Textfeld laden
+        textSize(17)
               
-        u = 700
+        u = 700   #kannst du mir bitte noch dieses u erklären? braucht es das für die Position des Textes? und dass es nicht nur eine Zeile macht?
         lines = loadStrings("gueter.txt")
 
         for line in lines:
-            text(line, xPos, u+20, 950,950)
+            text(line, xPos, u+20, 950, 950)#ich habe rausgefunden, dass die zweitletzte für die Breite des Textfeldes steht. Die letzte Zahl ist ja die Höhe des Feldes, würde nicht auch 180 reichen?
             u += 700*10
             
-    #Maustaste drücken, Pfeile und Definitionstext Geldstrom erscheinen und bleiben bis zum nächsten Klick
+    #Mausklick auf den Begriff Geldstrom: Pfeile und Definitionstext erscheinen und bleiben bis zum nächsten Klick
     if value == 2:
-        #Farbe
+        #Farbe für Pfeile und Text
         fill(0, 255, 10)
         
         #Pfeile
         arrow_right(90, 120)    
         arrow_left(140, 590)
         
-        #Definitionstext
-        textSize(20)
+        #Definitionstext: Grösse, Textposition, Text in einem definierten Textfeld laden
+        textSize(17)
               
         u = 700
         lines = loadStrings("geldstrom.txt")
@@ -104,16 +111,16 @@ def draw():
             u += 700*10
             
                     
-    # Maustaste drücken, Rahmen und Definitionstext Produzent erscheinen und bleiben bis zum nächsten Klick
+    # Mausklick auf den Begriff Produzent:  Rahmen und Definitionstext erscheinen und bleiben bis zum nächsten Klick
     if value == 3:
-        #Rahmen
+        #Rahmen für das Produzentenbild 
         stroke(0,102,204)
         strokeWeight(3)
         rahmen(50,230)
         
-        #Definitionstext
+        #Definitionstext: Farbe, Grösse, Textposition, Text in einem definierten Textfeld laden
         fill(0,102,204)
-        textSize(20)
+        textSize(17)
               
         u = 700
         lines = loadStrings("produzenten.txt")
@@ -123,16 +130,16 @@ def draw():
             u += 700*10
            
     
-    # Maustaste drücken, Definitionstext Konsument erscheint und bleiben bis zum nächsten Klick
+    # Mausklick auf den Begriff Konsument: Rahmen und Definitionstext erscheinen und bleiben bis zum nächsten Klick
     if value == 4:
-        #Rahmen
+        #Rahmen für das Konsumentenbild
         stroke(255,0,0)
         strokeWeight(3)
         rahmen(690,230)
         
-        #Definitionstext
+        #Definitionstext: Grösse, Textposition, Text in einem definierten Textfeld laden
         fill(255,0,0)
-        textSize(20)
+        textSize(17)
               
         u = 700
         lines = loadStrings("konsumenten.txt")
@@ -141,33 +148,32 @@ def draw():
             text(line, xPos, u+20, 950,950)
             u += 700*10
          
-        
+     # Mausklick auf den Begriff gesamter Wirtschaftskreislauf: alle Pfeile und Rahmen werden angezeigt
     if value == 5:
-        #Farbe
+        #Pfeile für den Güterstrom
         fill(255, 250, 8)
-        
-        #Pfeile
         arrow_right(90, 540)    
         arrow_left(140, 170)
         
-        #Farbe
+        #Pfeile für den Geldstrom
         fill(0, 255, 10)
-        
-        #Pfeile
         arrow_right(90, 120)    
         arrow_left(140, 590)
         
-        #Rahmen
+        #Rahmen für das Produzentenbild
         stroke(0,102,204)
         strokeWeight(3)
         rahmen(50,230)
         
-        #Rahmen
+        #Rahmen für das Konsumentenbild
         stroke(255,0,0)
         strokeWeight(3)
         rahmen(690,230)
     
-#Klickfunktion
+# --- Klickfunktion
+# Wird in einem bestimmten Bereich (auf einen Begriff) geklickt, stellt sich das value entsprechend um und löst das Erscheinen der Texte und Bilder aus. (Zeilen 76 bis 171).
+# Beim nächsten Klick (beliebiger Ort) verschwindet der Text wieder, da value nicht auf 0 ist und somit der else-Bereich der Definition aufgerufen wird, wodurch value wieder 0 ist.
+# Wird zu Beginn an einen beliebigen Ort geklickt, passiert nichts, da value 0 ist und bleibt. 
 def mouseClicked():
     global value
     if value == 0 and mouseX > 40 and mouseX < 200 and mouseY > 675 and mouseY < 700:
