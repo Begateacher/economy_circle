@@ -82,11 +82,11 @@ def draw():
         #Definitionstext: Grösse, Textposition, Text in einem definierten Textfeld laden
         textSize(17)
               
-        u = 700   # setzt die Position des einzulesenden Textes und dass es nicht nur eine Zeile macht?
+        u = 700   
         lines = loadStrings("gueter.txt")
 
         for line in lines:
-            text(line, xPos, u+20, 950, 180)#ich habe rausgefunden, dass die zweitletzte für die Breite des Textfeldes steht. Die letzte Zahl ist ja die Höhe des Feldes, würde nicht auch 180 reichen?
+            text(line, xPos, u+20, 950, 180)
             u += 700*10
             
     #Mausklick auf den Begriff Geldstrom: Pfeile und Definitionstext erscheinen und bleiben bis zum nächsten Klick
@@ -105,7 +105,7 @@ def draw():
         lines = loadStrings("geldstrom.txt")
         
         for line in lines:
-            text(line, xPos, u+20, 950,950)
+            text(line, xPos, u+20, 950,180)
             u += 700*10
             
                     
@@ -124,7 +124,7 @@ def draw():
         lines = loadStrings("produzenten.txt")
 
         for line in lines:
-            text(line, xPos, u+20, 950,950)
+            text(line, xPos, u+20, 950,180)
             u += 700*10
            
     
@@ -143,7 +143,7 @@ def draw():
         lines = loadStrings("konsumenten.txt")
 
         for line in lines:
-            text(line, xPos, u+20, 950,950)
+            text(line, xPos, u+20, 950,180)
             u += 700*10
          
      # Mausklick auf den Begriff gesamter Wirtschaftskreislauf: alle Pfeile und Rahmen werden angezeigt
