@@ -86,8 +86,8 @@ def draw():
         lines = loadStrings("gueter.txt")
 
         for line in lines:
-            text(line, xPos, u+20, 950, 180)
-            u += 700*10
+            text(line, xPos, u+20, xPos+910, u+40)
+
             
     #Mausklick auf den Begriff Geldstrom: Pfeile und Definitionstext erscheinen und bleiben bis zum nächsten Klick
     if value == 2:
@@ -105,8 +105,7 @@ def draw():
         lines = loadStrings("geldstrom.txt")
         
         for line in lines:
-            text(line, xPos, u+20, 950,180)
-            u += 700*10
+            text(line, xPos, u+20, xPos+910, u+40)
             
                     
     # Mausklick auf den Begriff Produzent:  Rahmen und Definitionstext erscheinen und bleiben bis zum nächsten Klick
@@ -124,8 +123,7 @@ def draw():
         lines = loadStrings("produzenten.txt")
 
         for line in lines:
-            text(line, xPos, u+20, 950,180)
-            u += 700*10
+            text(line, xPos, u+20, xPos+910, u+40)
            
     
     # Mausklick auf den Begriff Konsument: Rahmen und Definitionstext erscheinen und bleiben bis zum nächsten Klick
@@ -143,8 +141,7 @@ def draw():
         lines = loadStrings("konsumenten.txt")
 
         for line in lines:
-            text(line, xPos, u+20, 950,180)
-            u += 700*10
+            text(line, xPos, u+20, xPos+910, u+40)
          
      # Mausklick auf den Begriff gesamter Wirtschaftskreislauf: alle Pfeile und Rahmen werden angezeigt
     if value == 5:
