@@ -1,8 +1,6 @@
 #importieren der Pfeile und Rahmen
 from mehrere_pfeile import *
 
-#globale Vereinbarungen 
-img = None   #brauchen wir diese Zeile? im setup haben wir dann ja img1 und img2?
 #Variable ohne Zuweisung
 font = None
 #Vaiable mit Zuweisung
@@ -29,14 +27,14 @@ def draw():
     xPos = 500
     yPos = 70
     textSize(60)
-    fill(0,0,0)
+    fill(0,26,100)
     textAlign(CENTER)
     text(tt, xPos,yPos)
     
     # --- Anweisung zum Nutzen des Programms
     fill(0,0,0)
     textSize(20)
-    text("Klicke auf einen der Begriffe!",xPos,yPos+40)
+    text(u"Klicke auf einen der unten aufgeführten Begriffe!",xPos,yPos+40)
     
     # --- Bilder des Wirtschaftskreislaufs
     # Position der Bilder und Grösse der Bilder 
@@ -84,11 +82,11 @@ def draw():
         #Definitionstext: Grösse, Textposition, Text in einem definierten Textfeld laden
         textSize(17)
               
-        u = 700   #kannst du mir bitte noch dieses u erklären? braucht es das für die Position des Textes? und dass es nicht nur eine Zeile macht?
+        u = 700   # setzt die Position des einzulesenden Textes und dass es nicht nur eine Zeile macht?
         lines = loadStrings("gueter.txt")
 
         for line in lines:
-            text(line, xPos, u+20, 950, 950)#ich habe rausgefunden, dass die zweitletzte für die Breite des Textfeldes steht. Die letzte Zahl ist ja die Höhe des Feldes, würde nicht auch 180 reichen?
+            text(line, xPos, u+20, 950, 180)#ich habe rausgefunden, dass die zweitletzte für die Breite des Textfeldes steht. Die letzte Zahl ist ja die Höhe des Feldes, würde nicht auch 180 reichen?
             u += 700*10
             
     #Mausklick auf den Begriff Geldstrom: Pfeile und Definitionstext erscheinen und bleiben bis zum nächsten Klick
