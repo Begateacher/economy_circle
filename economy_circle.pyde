@@ -24,17 +24,17 @@ def draw():
     
     # --- Titel
     #tt Variable, Titel Wirtschaftskreislauf wird geladen und gesetzt
-    xPos = 500
-    yPos = 70
+    xPostt = 500
+    yPostt = 70
     textSize(60)
     fill(0,26,100)
     textAlign(CENTER)
-    text(tt, xPos,yPos)
+    text(tt, xPostt,yPostt)
     
     # --- Anweisung zum Nutzen des Programms
     fill(0,0,0)
     textSize(20)
-    text(u"Klicke auf einen der unten aufgeführten Begriffe!",xPos,yPos+40)
+    text(u"Klicke auf einen der unten aufgeführten Begriffe!",xPostt,yPostt+40)
     
     # --- Bilder des Wirtschaftskreislaufs
     # Position der Bilder und Grösse der Bilder 
@@ -45,7 +45,7 @@ def draw():
     # gesamter Wirtschaftskreislauf
     fill(0,26,100)
     textSize(25)
-    text("Gesamter Wirtschaftskreislauf", xPos, yPos+ 330)
+    text("Gesamter Wirtschaftskreislauf", xPostt, yPostt+ 330)
     
     # einzelne Begriffe zum Wirtschaftskreislauf
     xPos = 40
@@ -164,6 +164,8 @@ def draw():
         stroke(255,0,0)
         strokeWeight(3)
         rahmen(690,230)
+    
+    print(value)   #Zustandskontrolle
     
 # --- Klickfunktion
 # Wird in einem bestimmten Bereich (auf einen Begriff) geklickt, stellt sich das value entsprechend um und löst das Erscheinen der Texte und Bilder aus. (Zeilen 76 bis 171).
