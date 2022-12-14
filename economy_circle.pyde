@@ -9,6 +9,10 @@ tt ="Der Wirtschaftkreislauf"
 lines = ""
 #Variable zur Klickfunktion
 value = 0
+#Variable für die Pfeilrichtung
+richtung = None
+#Variable für Textfeld
+u = 720
 
 def setup():
     global img1, img2
@@ -16,17 +20,16 @@ def setup():
     #Bilder aus data laden
     img1 = loadImage("industrie2.png")
     img2 = loadImage("house.png")
-    font = createFont("Century Gothic",50)
-    textFont(font)
      
 def draw():
-    background(155, 150, 150)
+    background(255, 255, 255)
     
     # --- Titel
     #tt Variable, Titel Wirtschaftskreislauf wird geladen und gesetzt
     xPostt = 500
     yPostt = 70
-    textSize(60)
+    font1 = createFont("Century Gothic",60)
+    textFont(font1)
     fill(0,26,100)
     textAlign(CENTER)
     text(tt, xPostt,yPostt)
@@ -34,7 +37,7 @@ def draw():
     # --- Anweisung zum Nutzen des Programms
     fill(0,0,0)
     textSize(20)
-    text(u"Klicke auf einen der unten aufgeführten Begriffe!",xPostt,yPostt+40)
+    text(u"Klicke auf einen der fettgedruckten Begriffe!",xPostt,yPostt+40)
     
     # --- Bilder des Wirtschaftskreislaufs
     # Position der Bilder und Grösse der Bilder 
@@ -44,25 +47,26 @@ def draw():
     # --- Legende 
     # gesamter Wirtschaftskreislauf
     fill(0,26,100)
-    textSize(25)
+    font2 = createFont("Century Gothic Bold",25)
+    textFont(font2)
+    
     text("Gesamter Wirtschaftskreislauf", xPostt, yPostt+ 330)
     
     # einzelne Begriffe zum Wirtschaftskreislauf
     xPos = 40
     yPos = 700
-    textSize(30)
-    textAlign(LEFT) 
     
-    fill(255,250,8)
+    textAlign(LEFT) 
+    fill(84,139,84)
     text(u"Güterstrom", xPos, yPos)
     
-    fill(0,255,10)
+    fill(238,201,0)
     text("Geldstrom", xPos+250,yPos)    
     
     fill(0,102,204)
     text("Produzenten", xPos+480,yPos)    
     
-    fill(255,0,0)
+    fill(139,0,0)
     text("Konsumenten", xPos+740,yPos)
     
      
@@ -73,96 +77,88 @@ def draw():
     #Mausklick auf den Begriff Güterstrom: Pfeile und Definitionstext erscheinen und bleiben bis zum nächsten Klick
     if value == 1:
         #Farbe für Pfeile und Text
-        fill(255, 250, 8)
+        fill(84,139,84)
         
         #Pfeile
-        arrow_right(90, 540)    
-        arrow_left(140, 170)  
+        arrow(140, 540, 1)    
+        arrow(190, 170, 0)  
         
         #Definitionstext: Grösse, Textposition, Text in einem definierten Textfeld laden
         textSize(17)
               
-        u = 700   
         lines = loadStrings("gueter.txt")
 
         for line in lines:
-            text(line, xPos, u+20, xPos+910, u+40)
+            text(line, xPos, u, xPos+910, u+20)
 
             
     #Mausklick auf den Begriff Geldstrom: Pfeile und Definitionstext erscheinen und bleiben bis zum nächsten Klick
     if value == 2:
         #Farbe für Pfeile und Text
-        fill(0, 255, 10)
+        fill(238,201,0)
         
         #Pfeile
-        arrow_right(90, 120)    
-        arrow_left(140, 590)
+        arrow(190, 120, 0)    
+        arrow(140, 590, 1)
         
         #Definitionstext: Grösse, Textposition, Text in einem definierten Textfeld laden
         textSize(17)
-              
-        u = 700
+
         lines = loadStrings("geldstrom.txt")
         
         for line in lines:
-            text(line, xPos, u+20, xPos+910, u+40)
+            text(line, xPos, u, xPos+910, u+20)
             
                     
     # Mausklick auf den Begriff Produzent:  Rahmen und Definitionstext erscheinen und bleiben bis zum nächsten Klick
     if value == 3:
         #Rahmen für das Produzentenbild 
         stroke(0,102,204)
-        strokeWeight(3)
         rahmen(50,230)
         
         #Definitionstext: Farbe, Grösse, Textposition, Text in einem definierten Textfeld laden
         fill(0,102,204)
         textSize(17)
               
-        u = 700
         lines = loadStrings("produzenten.txt")
 
         for line in lines:
-            text(line, xPos, u+20, xPos+910, u+40)
+            text(line, xPos, u, xPos+910, u+20)
            
     
     # Mausklick auf den Begriff Konsument: Rahmen und Definitionstext erscheinen und bleiben bis zum nächsten Klick
     if value == 4:
         #Rahmen für das Konsumentenbild
-        stroke(255,0,0)
-        strokeWeight(3)
+        stroke(139,0,0)
         rahmen(690,230)
         
         #Definitionstext: Grösse, Textposition, Text in einem definierten Textfeld laden
-        fill(255,0,0)
+        fill(139,0,0)
         textSize(17)
-              
-        u = 700
+
         lines = loadStrings("konsumenten.txt")
 
         for line in lines:
-            text(line, xPos, u+20, xPos+910, u+40)
+            text(line, xPos, u, xPos+910, u+20)
          
      # Mausklick auf den Begriff gesamter Wirtschaftskreislauf: alle Pfeile und Rahmen werden angezeigt
-    if value == 5:
+    if value == 99:
         #Pfeile für den Güterstrom
-        fill(255, 250, 8)
-        arrow_right(90, 540)    
-        arrow_left(140, 170)
+        fill(84,139,84)
+        arrow(140, 540, 1)    
+        arrow(190, 170, 0) 
         
         #Pfeile für den Geldstrom
-        fill(0, 255, 10)
-        arrow_right(90, 120)    
-        arrow_left(140, 590)
+        fill(238,201,0)
+        arrow(140, 120, 1)    
+        arrow(190, 590, 0)
         
         #Rahmen für das Produzentenbild
         stroke(0,102,204)
-        strokeWeight(3)
         rahmen(50,230)
         
         #Rahmen für das Konsumentenbild
-        stroke(255,0,0)
-        strokeWeight(3)
+        stroke(139,0,0)
         rahmen(690,230)
     
     print(value)   #Zustandskontrolle
@@ -186,7 +182,7 @@ def mouseClicked():
         value = 4
 
     elif value == 0 and mouseX > 300 and mouseX < 700 and mouseY > 375 and mouseY < 400:
-        value = 5
+        value = 99
         
     else:
         value = 0
